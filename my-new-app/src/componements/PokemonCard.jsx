@@ -1,4 +1,4 @@
-const pokemonList = [
+/*const pokemonList = [
     {
       name: "bulbasaur",
       imgSrc:
@@ -7,16 +7,15 @@ const pokemonList = [
     {
       name: "mew",
     },
-  ];
+  ];*/
 
 
 
 
-function PokemonCard (){
-    let Pokemon = pokemonList[1]
+function PokemonCard ({pokemon}){
     return <figure>
-        {typeof Pokemon.imgSrc !== "undefined" ? <img src= {Pokemon.imgSrc}/> : <p>???</p>}
-        <figcaption>{Pokemon.name}</figcaption>
+        {typeof pokemon.imgSrc !== "undefined" ? <img src= {pokemon.imgSrc}/> : <p>???</p>}
+        <figcaption>{pokemon.name}</figcaption>
     </figure>
 };
 
