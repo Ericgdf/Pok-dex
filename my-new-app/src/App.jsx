@@ -34,11 +34,27 @@ function App() {
   const [count, setCount] = useState(0); // count = la valeur retrouné setCount = l'action appliqué dessus useState(0) = ici la valeur initale sera de 0
   useEffect(() => {alert("hello pokemon trainer :)")},[]); // renvoie message à l'ouverture du site
   {pokemonList[count].name === "pikachu" ? alert("pika pikachu") : ""}  // si pikachu apparait alors message
-  return (<div>
+
+  return (
+  <div> 
   <PokemonCard name={pokemonList[count].name} src={pokemonList[count].imgSrc}/>
-  <NavBar count ={count} setCount={setCount} />
-  </div>)
+
+  <ul> {pokemonList.map((pokemon, index) =>(
+    <NavBar 
+    count ={count}
+    setCount={setCount}
+    index = {index}
+    key = {pokemon.name}
+    pokeName={pokemon.name} 
+    />
+   
+  ))}
+  </ul>
+
+  </div>) 
 }
+//<NavBar count ={count} setCount={setCount} /> //
+
 
 export default App
 
