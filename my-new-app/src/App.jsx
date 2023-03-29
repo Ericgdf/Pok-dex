@@ -1,7 +1,8 @@
 import MyTitle from "./MyTitle.jsx";
 import PokemonCard from "./componements/PokemonCard.jsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavBar from "./componements/navBar.jsx";
+
 
 export const pokemonList = [
   {
@@ -31,9 +32,11 @@ export const pokemonList = [
 
 function App() {
   const [count, setCount] = useState(0); // count = la valeur retrouné setCount = l'action appliqué dessus useState(0) = ici la valeur initale sera de 0
+  useEffect(() => {alert("hello pokemon trainer :)")},[]); // renvoie message à l'ouverture du site
+  {pokemonList[count].name === "pikachu" ? alert("pika pikachu") : ""}  // si pikachu apparait alors message
   return (<div>
   <PokemonCard name={pokemonList[count].name} src={pokemonList[count].imgSrc}/>
-  <NavBar count ={count} setCount={setCount} index = {pokemonList.lenthg-1}/>
+  <NavBar count ={count} setCount={setCount} />
   </div>)
 }
 
